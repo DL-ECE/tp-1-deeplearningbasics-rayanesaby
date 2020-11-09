@@ -234,7 +234,7 @@ class FFNN:
             signal = self.layers[i].Z
             cur_layer = self.layers[i+1]
             self.layers[i+1].Z = self.one_step_forward(signal, cur_layer)
-         
+        
         return self.layers[-1].Z
     
     def one_step_backward(self, prev_layer: Layer, cur_layer: Layer)-> Layer:
@@ -363,14 +363,19 @@ plot_one_image(X_demo, y_true, index_to_plot)
 prediction = np.argmax(y_demo[index_to_plot,:])
 true_target = np.argmax(y_true[index_to_plot,:])
 
-# is it the same number ?
+# is it the same number ? 
+print(prediction)
+print(true_target)
 
 # loop arround the demo test set and try to find a miss prediction
 for i in range(0, nsample):   
-    prediction = None # Todo
-    true_target = None # Todo
+    prediction =  np.argmax(y_demo[i,:]) # Todo
+    true_target = np.argmax(y_true[i,:]) # Todo
     if prediction != true_target:
         # TODO
+        print(prediction)
+        print(true_target)
+
         pass
 
 """## Open analysis
@@ -389,3 +394,7 @@ Also explain how the neural network behave when changing them ?
 TODO
 """
 
+#EN augmentant le nombre de couche dans la config la précision va augmenter. 
+# Tandis que lorsque l'on augmente trop minibatch_size la précision va diminuer.
+# Et enfin lorsque l'on modifie nepoch la précison est très modifier, elle a tendance a être très bas.
+#Si on le learning rate est trop grand alors on aura un problème overfitting, et à l'inverse si il est trop petit on aura un problème d'underfitting
