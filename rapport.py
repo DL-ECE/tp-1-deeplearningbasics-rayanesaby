@@ -394,7 +394,7 @@ Also explain how the neural network behave when changing them ?
 TODO
 """
 
-#EN augmentant le nombre de n couche dans la config de 100 la précision va augmenter en atteingnant au bout de 10 cycle complet le 0,92.
-#Nepoch correspond au nombre de fois ou l'on va passé dans les phases forward propagation et backward propagation
+#La config : EN augmentant le nombre de n couche dans la config de 100 la précision va augmenter en atteingnant au bout de 10 cycle complet le 0,92.
+#Nepoch: correspond au nombre de fois ou l'on va passé dans les phases forward propagation et backward propagation
 # Tandis que lorsque l'on augmente le nombre d'exemple minibatch_size la précision va diminuer c'est pour cela que je l'ai laissé à 5 mais si on peut l'augmenter de 2 ou 3 pour avoir une meilleur précison.
-#Si le learning rate est trop grand alors on aura un problème overfitting, et à l'inverse si il est trop petit on aura un problème d'underfitting.
+#Pour éviter des problème d'overfitting ou d'underfitting, il était plus intéressant plus avoir une meilleur précision de garder un learning rate à 0,01
