@@ -333,9 +333,9 @@ It's on 12 points because there is a lot of functions to fill but also we want t
 To have all the point your neural network needs to have a Test accuracy > 92 % !!
 """
 
-minibatch_size = 5 
+minibatch_size = 5 #5
 nepoch = 10
-learning_rate = 0.01
+learning_rate = 0.01 #0.01
 
 ffnn = FFNN(config=[784, 100, 100, 10], minibatch_size=minibatch_size, learning_rate=learning_rate)
 
@@ -394,7 +394,7 @@ Also explain how the neural network behave when changing them ?
 TODO
 """
 
-#EN augmentant le nombre de couche dans la config la précision va augmenter. 
-# Tandis que lorsque l'on augmente trop minibatch_size la précision va diminuer.
-# Et enfin lorsque l'on modifie nepoch la précison est très modifier, elle a tendance a être très bas.
-#Si on le learning rate est trop grand alors on aura un problème overfitting, et à l'inverse si il est trop petit on aura un problème d'underfitting
+#EN augmentant le nombre de n couche dans la config de 100 la précision va augmenter en atteingnant au bout de 10 cycle complet le 0,92.
+#Nepoch correspond au nombre de fois ou l'on va passé dans les phases forward propagation et backward propagation
+# Tandis que lorsque l'on augmente le nombre d'exemple minibatch_size la précision va diminuer c'est pour cela que je l'ai laissé à 5 mais si on peut l'augmenter de 2 ou 3 pour avoir une meilleur précison.
+#Si le learning rate est trop grand alors on aura un problème overfitting, et à l'inverse si il est trop petit on aura un problème d'underfitting.
